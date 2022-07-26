@@ -1,8 +1,11 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import { connect } from 'react-redux';
+const CRegestration = connect(null, {onLogin: actionFullLogin})(Regestration)
 function Regestration() {
+  const [Login, setLogin] = useState('');
+  const [Password, setPassword] = useState('');
   return (
-    <form className="row g-3 m-4">
+    <div className="row g-3 m-4">
   <div className="col-md-4">
     <label htmlFor="validationDefault01" className="form-label h6">First name</label>
     <input type="text" className="form-control" id="validationDefault01" required/>
@@ -30,8 +33,20 @@ function Regestration() {
     </select>
   </div>
   <div className="col-md-3">
-    <label htmlFor="validationDefault06" className="form-label h6">Phone Number</label>
-    <input type="number" className="form-control" id="validationDefault06" required/>
+    <label htmlFor="validationDefault06" className="form-label h6" >Phone Number</label>
+    <input type="number" 
+          className="form-control" 
+          id="validationDefault06" 
+          value={Login}
+          onChange={ e => setLogin(e.target.value)} required/>
+  </div>
+  <div className="col-md-3">
+    <label htmlFor="validationDefault06" className="form-label h6">Password</label>
+    <input type="number" 
+            className="form-control" 
+            id="validationDefault06" 
+            value={Password}
+          onChange={ e => setPassword(e.target.value)}/>
   </div>
   <div className="col-12">
     <div className="form-check">
@@ -42,10 +57,10 @@ function Regestration() {
     </div>
   </div>
   <div className="col-12">
-    <button className="btn btn-primary" type="submit">Submit form</button>
+    <button className="btn btn-primary" >Submit form</button>
   </div>
-</form>
+</div>
   )
 }
 
-export default Regestration
+export default CRegestration

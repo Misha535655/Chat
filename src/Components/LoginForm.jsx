@@ -1,18 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-
-function LoginForm() {
+import {actionFullLogin} from '../store/actions'
+import { connect } from 'react-redux'
+const CLoginForm = connect(null, {onLogin: actionFullLogin})(LoginForm)
+function LoginForm({onLogin}) {
+  const [Login, setLogin] = useState('');
+  const [Password, setPassword] = useState('');
   return (
-    <form className="login_form mt-4">
+    <div className="login_form mt-4">
       <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label h4">
-          Email address
+        Phone Number
         </label>
         <input
-          type="email"
           className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
+          value={Login}
+          onChange={ e => setLogin(e.target.value)}
         />
         <div id="emailHelp" className="form-text">
           We'll never share your email with anyone else.
@@ -26,16 +31,18 @@ function LoginForm() {
           type="password"
           className="form-control"
           id="exampleInputPassword1"
+          value={Password}
+          onChange={ e => setPassword(e.target.value)}
         />
       </div>
       <div className="mb-3 d-flex justify-content-around">
-        <button type="submit" className="btn btn-primary">
-          Sign in
-        </button>
+        
+          <button className="btn btn-primary" onClick={() => onLogin(Login, Password)}>Sign in</button>
+        
         <Link to='/Regestration' className="btn btn-light">Sign up</Link>
       </div>
-    </form>
+    </div>
   )
 }
 
-export default LoginForm
+export default CLoginForm

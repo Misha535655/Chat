@@ -1,5 +1,5 @@
-import LoginForm from "./LoginForm";
-import Regestration from "./Regestration";
+import CLoginForm from "./LoginForm";
+import CRegestration from "./Regestration";
 import Menu from "./Menu";
 import Chats from "./Chats";
-export { LoginForm, Regestration, Menu, Chats };
+export { CLoginForm, CRegestration, Menu, Chats };
