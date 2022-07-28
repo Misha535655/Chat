@@ -1,6 +1,6 @@
 const getGQL = url =>
     (query, variables = {}) =>
-        fetch(url, {
+       fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -15,9 +15,11 @@ const getGQL = url =>
                     return Object.values(data.data)[0];
                 } else throw new Error(JSON.stringify(data.errors));
             });
+    
+    
 
 const URL = `http://chat.ed.asmer.org.ua/`
 
-const gql = getGQL(`${URL}graphql`)
+const gql = getGQL(`${URL}graphql   `)
 
 export default gql

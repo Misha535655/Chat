@@ -38,6 +38,7 @@ const actionFullLogin = (login, password) =>
         const gqlQuery = `query log($login:String, $password:String){
             login(login:$login, password:$password)
         }`
+        debugger;
         const gqlPromise = gql(gqlQuery, {login, password})
         const action     = actionPromise('login', gqlPromise) 
         const result     = await dispatch(action) 
@@ -46,7 +47,7 @@ const actionFullLogin = (login, password) =>
 
 const actionFullReg = (login, password, userName) => 
     async (dispatch) => {
-    const gqlMutation = `mutation reg{
+    const gqlMutation = `mutation reg($login:String, $password:String, $userName:String) {
         UserUpsert(user:{
           login:$login, password:$password, nick:$userName
         }){
@@ -54,10 +55,9 @@ const actionFullReg = (login, password, userName) =>
         }
       }`
       const gqlPromise = gql(gqlMutation, {login, password, userName})
-      const action     = actionPromise('login', gqlPromise); 
-      const result     = await dispatch(action);
+      const action     = actionPromise('login', gqlPromise) 
+      const result     = await dispatch(action) 
       dispatch(actionAuthLogin(result))
-      
 }
 
     export {actionFullLogin, actionAuthLogout, actionPromise, actionFullReg}

@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux';
-const CRegestration = connect(null, {onLogin: actionFullLogin})(Regestration)
-function Regestration() {
+import { actionFullReg } from '../store/actions';
+const CRegestration = connect(null, {onReg: actionFullReg})(Regestration)
+function Regestration({onReg}) {
   const [Login, setLogin] = useState('');
   const [Password, setPassword] = useState('');
+  const [NickName, setNickName] = useState('');
   return (
     <div className="row g-3 m-4">
   <div className="col-md-4">
@@ -18,7 +20,13 @@ function Regestration() {
     <label htmlFor="validationDefaultUsername" className="form-label h6">Username</label>
     <div className="input-group">
       <span className="input-group-text" id="inputGroupPrepend2">@</span>
-      <input type="text" className="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required/>
+      <input
+         type="text" 
+         className="form-control" 
+         id="validationDefaultUsername"  
+         aria-describedby="inputGroupPrepend2"
+          value={NickName}
+          onChange={ e => setNickName(e.target.value)} required/>
     </div>
   </div>
   <div className="col-md-6">
@@ -34,7 +42,7 @@ function Regestration() {
   </div>
   <div className="col-md-3">
     <label htmlFor="validationDefault06" className="form-label h6" >Phone Number</label>
-    <input type="number" 
+    <input 
           className="form-control" 
           id="validationDefault06" 
           value={Login}
@@ -42,7 +50,7 @@ function Regestration() {
   </div>
   <div className="col-md-3">
     <label htmlFor="validationDefault06" className="form-label h6">Password</label>
-    <input type="number" 
+    <input type="password" 
             className="form-control" 
             id="validationDefault06" 
             value={Password}
@@ -57,7 +65,7 @@ function Regestration() {
     </div>
   </div>
   <div className="col-12">
-    <button className="btn btn-primary" >Submit form</button>
+    <button className="btn btn-primary" onClick={() => onReg(Login,Password,NickName)} >Submit form</button>
   </div>
 </div>
   )

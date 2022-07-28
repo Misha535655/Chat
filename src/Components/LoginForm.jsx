@@ -31,13 +31,13 @@ function LoginForm({onLogin}) {
           type="password"
           className="form-control"
           id="exampleInputPassword1"
-          value={Password}
+          value={Password}  
           onChange={ e => setPassword(e.target.value)}
         />
       </div>
       <div className="mb-3 d-flex justify-content-around">
         
-          <button className="btn btn-primary" onClick={() => onLogin(Login, Password)}>Sign in</button>
+          <Link to='/Menu' className="btn btn-primary" onClick={() => onLogin(Login, Password)}>Sign in</Link>
         
         <Link to='/Regestration' className="btn btn-light">Sign up</Link>
       </div>
