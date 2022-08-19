@@ -26,83 +26,95 @@ body{
 }
 
 .chat{
+    max-height: 500px;
     margin-top: auto;
     margin-bottom: auto;
 }
+.add_chat{
+    width: 100%;
+}
+.user_list{
+    height: 320px;
+    overflow: auto;
+}
 .card{
-    height: 500px;
-    border-radius: 15px !important;
-    background-color: rgba(0,0,0,0.4) !important;
+    height: 600px;
+    border-radius: 15px ;
+    background-color: rgba(0,0,0,0.4) ;
 }
 .contacts_body{
-    padding:  0.75rem 0 !important;
-    overflow-y: auto;
-    white-space: nowrap;
+    padding:  0.75rem 0 ;
 }
 .msg_card_body{
     overflow-y: auto;
+    overflow-x: hidden;
+
+}
+.text{
+    max-width: 100%;
 }
 .card-header{
-    border-radius: 15px 15px 0 0 !important;
-    border-bottom: 0 !important;
+    border-radius: 15px 15px 0 0 ;
+    border-bottom: 0 ;
 }
 .card-footer{
-border-radius: 0 0 15px 15px !important;
-    border-top: 0 !important;
+border-radius: 0 0 15px 15px ;
+    border-top: 0 ;
 }
 .container{
     align-content: center;
 }
 .search{
-    border-radius: 15px 0 0 15px !important;
-    background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color:white !important;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.3) ;
+    border:0 ;
+    color:white ;
 }
 .search:focus{
-     box-shadow:none !important;
-   outline:0px !important;
+     box-shadow:none ;
+   outline:0px ;
 }
 .type_msg{
-    background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color:white !important;
-    height: 60px !important;
+    background-color: rgba(0,0,0,0.3) ;
+    border:0 ;
+    color:white ;
+    height: 60px ;
     overflow-y: auto;
 }
     .type_msg:focus{
-     box-shadow:none !important;
-   outline:0px !important;
+     box-shadow:none ;
+   outline:0px ;
 }
 .attach_btn{
-border-radius: 15px 0 0 15px !important;
-background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color: white !important;
+border-radius: 15px 0 0 15px ;
+background-color: rgba(0,0,0,0.3) ;
+    border:0 ;
+    color: white ;
     cursor: pointer;
 }
 .send_btn{
-border-radius: 0 15px 15px 0 !important;
-background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color: white !important;
+border-radius: 0 15px 15px 0 ;
+background-color: rgba(0,0,0,0.3) ;
+    border:0 ;
+    color: white ;
     cursor: pointer;
 }
 .search_btn{
-    border-radius: 0 15px 15px 0 !important;
-    background-color: rgba(0,0,0,0.3) !important;
-    border:0 !important;
-    color: white !important;
+    border-radius: 0 15px 15px 0 ;
+    background-color: rgba(0,0,0,0.3) ;
+    border:0 ;
+    color: white ;
     cursor: pointer;
 }
 .contacts{
+    max-height: 450px;
     list-style: none;
     padding: 0;
 }
 .contacts li{
-    width: 100% !important;
+    width: 100% ;
     padding: 5px 10px;
-    margin-bottom: 15px !important;
+    margin-bottom: 15px ;
 }
 .active{
     background-color: rgba(0,0,0,0.3);
@@ -139,7 +151,7 @@ right: 0.4em;
 border:1.5px solid white;
 }
 .offline{
-background-color: #c23616 !important;
+background-color: #c23616 ;
 }
 .user_info{
 margin-top: auto;
@@ -165,6 +177,7 @@ cursor: pointer;
 margin-right: 20px;
 }
 .msg_cotainer{
+    max-width: 90%;
 margin-top: auto;
 margin-bottom: auto;
 margin-left: 10px;
@@ -238,6 +251,59 @@ background-color: rgba(0,0,0,0.2);
 }
 @media(max-width: 576px){
 .contacts_card{
-margin-bottom: 15px !important;
+margin-bottom: 15px ;
 }
+}
+
+
+
+
+
+
+
+
+
+.headModal{
+    border-bottom: .5px solid #000  ;
+}
+.modal-dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999   ;
+    
+}
+.input-modal{
+    outline:none;
+    border: 0;
+    border-bottom:1px solid #000 ;
+}
+
+.modal-content {
+    border-radius: 10%;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+}
+.ModalWindow .modal-content{
+    border-radius: 0;
+    height: 700px;
+}
+.ModalWindowProfile .modal-content{
+    border-radius: 0;
+    height: 400px;
+}
+.dropzone {
+    border: dashed;
+    border-color: #ccc ;
+    border-radius: 10px ;
+    background-color: rgb(236, 237, 238)
+}
+.dropzone p {
+    margin: 0;
+    padding: 10px;
+} 
+.name{
+    height: 30px;
 }

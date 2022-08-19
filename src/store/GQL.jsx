@@ -16,10 +16,9 @@ const getGQL = url =>
                 } else throw new Error(JSON.stringify(data.errors));
             });
     
-    
 
 const URL = `http://chat.ed.asmer.org.ua/`
 
 const gql = getGQL(`${URL}graphql   `)
 
-export default gql
+export {gql}
